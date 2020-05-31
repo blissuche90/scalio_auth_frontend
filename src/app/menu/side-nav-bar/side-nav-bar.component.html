@@ -1,0 +1,20 @@
+<div id="mySidebar" class="sidebar onOpenSideBar">
+    <!-- <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a> -->
+    <div class="titleCard">
+        <a style="color: white;font-size: 30px">Casaloca</a>
+    </div>
+    <div *ngIf="isAdmin == true;else elseBloc">
+        <ul *ngFor="let item of adminMenuItemsList">
+            <li (click)="SendCompName(item)" value="item">
+                <a [ngStyle]="{'color':selectedCompName == item? 'white' : black}">{{item}}</a>
+            </li>
+        </ul>
+    </div>
+    <ng-template #elseBloc>
+        <ul *ngFor="let item of userMenuItemsList">
+            <li (click)="SendCompName(item)" value="item">
+                <a [ngStyle]="{'color':selectedCompName == item? 'white' : black}">{{item}}</a>
+            </li>
+        </ul>
+    </ng-template>
+</div>
