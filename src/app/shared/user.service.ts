@@ -26,7 +26,7 @@ export class UserService {
       password: this.formModel.value.Passwords.password,
       roles: ["user"]
     };
-    return this.http.post(BaseURI + 'auth/register', body);
+    return this.http.post(BaseURI + 'auth/signup', body);
   }
   
   registerForAdmin() {
@@ -35,7 +35,7 @@ export class UserService {
       password: this.formModel.value.Passwords.password,
       roles: ["admin"]
     };
-    return this.http.post(BaseURI + 'auth/register', body);
+    return this.http.post(BaseURI + 'auth/signup', body);
   }
   
 
